@@ -20,7 +20,8 @@ end
 
 # Person 2
 def my_array_modification_method(source, thing_to_modify)
-  # Your code here!
+	source.at(2) += thing_to_modify
+	source.at(8) += thing_to_modify
 end
 
 def my_hash_modification_method(source, thing_to_modify)
