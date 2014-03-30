@@ -19,18 +19,26 @@ end
 #
 
 # Person 2
+
 def my_array_modification_method(source, thing_to_modify)
-	source.at(2) += thing_to_modify
-	source.at(8) += thing_to_modify
+  new_array = []
+  source.each { |a|
+  if a.is_a? Integer
+    new_array << a + thing_to_modify
+  else
+    new_array << a
+  end
+  }
+  source.replace(new_array)
 end
 
 def my_hash_modification_method(source, thing_to_modify)
-  # Your code here!
+  source.each {|x, y| source[x] = y + thing_to_modify}
 end
 
 # Identify and describe the ruby method you implemented. 
-# 
-#
+# I used .each in this and .replace for the array.  .each iterates over each item in the hash or array.
+# .replace replaces the original array with another array
 #
 
 
@@ -79,8 +87,27 @@ p my_deletion_method(i_want_pets, "a") == ["I", 4, "pets", "but", "I", "only", 3
 p my_deletion_method(my_family_pets_ages, "George") == {"Evi" => 8, "Hoobie" => 5, "Bogart" => 6, "Poly" => 6, "Annabelle" => 2, "Ditto" => 5}
 
 # Reflect!
-# 
-# 
-# 
-# 
-# 
+# What parts of your strategy worked? What problems did you face?
+# I wasn't sure how to approach this, so I spent a lot of time researching and trying to figure out how to accomplish this
+# with a method that worked on both hash and array.  I'm still not sure this was the best way to go about it.
+
+# What questions did you have while coding? What resources did you find to help you answer them?
+# I read through most of the page of 
+# http://www.ruby-doc.org/core-2.1.1/Array.html
+# http://www.ruby-doc.org/core-2.1.1/Hash.html
+# but from what I understood, map would have worked with an array but not a hash
+
+# What concepts are you having trouble with, or did you just figure something out? If so, what?
+# I guess I was having trouble with this challenge in general
+
+# Did you learn any new skills or tricks?
+# I learned about .replace, which will replace the original array's contents with the new contents.
+
+# How confident are you with each of the learning objectives?
+# I'm not too confident with the learning objectives, and I'm not sure if I was totally off target or not.
+
+# Which parts of the challenge did you enjoy?
+# I enjoyed learning about hashes and arrays.
+
+# Which parts of the challenge did you find tedious?
+# # researching and not coming up with something I could use
